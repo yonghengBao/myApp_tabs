@@ -5,12 +5,10 @@ import {File} from '@ionic-native/file';
 import {Transfer, TransferObject} from '@ionic-native/transfer';
 import {FileOpener} from '@ionic-native/file-opener';
 import {InAppBrowser} from '@ionic-native/in-app-browser';
-// import {APP_DOWNLOAD, APK_DOWNLOAD} from "./Constants";
+import {APP_DOWNLOAD, APK_DOWNLOAD} from "./Constants";
 
 @Injectable()
 export class AppUpdateServerProvider {
-  APP_DOWNLOAD:string='https://fir.im/lm7w?utm_source=fir&utm_medium=qr&release_id=5d1435d6ca87a87d7ae96de8&openId=oGB0Cjw3n7ASjncnPOvviPRK-kAI'
-  APK_DOWNLOAD:string='https://fir.im/lm7w?utm_source=fir&utm_medium=qr&release_id=5d1435d6ca87a87d7ae96de8&openId=oGB0Cjw3n7ASjncnPOvviPRK-kAI'
   constructor(private platform: Platform,
               private alertCtrl: AlertController,
               private transfer: Transfer,
