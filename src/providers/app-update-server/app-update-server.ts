@@ -9,7 +9,8 @@ import {InAppBrowser} from '@ionic-native/in-app-browser';
 
 @Injectable()
 export class AppUpdateServerProvider {
-
+  APP_DOWNLOAD:string='https://fir.im/lm7w?utm_source=fir&utm_medium=qr&release_id=5d1435d6ca87a87d7ae96de8&openId=oGB0Cjw3n7ASjncnPOvviPRK-kAI'
+  APK_DOWNLOAD:string='https://fir.im/lm7w?utm_source=fir&utm_medium=qr&release_id=5d1435d6ca87a87d7ae96de8&openId=oGB0Cjw3n7ASjncnPOvviPRK-kAI'
   constructor(private platform: Platform,
               private alertCtrl: AlertController,
               private transfer: Transfer,
@@ -56,7 +57,7 @@ export class AppUpdateServerProvider {
       const apk = this.file.externalRootDirectory + 'android.apk'; //apk保存的目录
 
       fileTransfer.download(APK_DOWNLOAD, apk).then(() => {
-        // this.fileOpener.open(apk,'application/vnd.android.package-archive');
+        this.fileOpener.open(apk,'application/vnd.android.package-archive');
       });
 
       fileTransfer.onProgress((event: ProgressEvent) => {
@@ -70,7 +71,7 @@ export class AppUpdateServerProvider {
       });
     }
     if (this.isIos()) {
-      this.openUrlByBrowser('https://fir.im/lm7w?utm_source=fir&utm_medium=qr&release_id=5d1435d6ca87a87d7ae96de8&openId=oGB0Cjw3n7ASjncnPOvviPRK-kAI');
+      this.openUrlByBrowser(APP_DOWNLOAD);
     }
   }
 
